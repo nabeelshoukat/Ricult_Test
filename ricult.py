@@ -1,3 +1,31 @@
+
+
+# Q#2 solution:
+
+input_data=[20,59,44,52,95,-21,-20,78] # data points to be work with
+results=[]           # store the final results
+for i in input_data: # itterate over the list (input_data)
+    if i<0:          # check if number is less than 0 , only compare then.
+        for j in input_data: # itterate over the list to check for equelence.
+            if j==abs(i):    # convert the number into positive numbers for comparison
+                results.extend([j,-abs(j)]) # store the results to list for final usage.
+                
+print(results)                # print the reqd. results
+
+# Q#3 solution:
+ 
+input_data=[20,59,44,52,95,-21,20,78] # data points to be work with
+
+from collections import Counter
+
+def most_frquent_number(lst):
+    results = Counter(lst)            # passing the list through counter
+    return results.most_common(1)[0][0] # return the most occurence with number and count as(number,occurence), pickup only first so [0][0] is used
+
+print(most_frquent_number(input_data)) # checkout the reqd. results
+
+ 
+# Q#1
 '''
     Step#1  : used English to elaborate the solutions.
     Step#2  : Used Python
@@ -19,30 +47,3 @@
     Step#6 : built in methods are also used in these solutions. 
 '''
 
-
-
-# Q#2 solution:
-
-input_data=[20,59,44,52,95,-21,-20,78] # data points to be work with
-results=[]           # store the final results
-for i in input_data: # itterate over the list (input_data)
-    if i<0:          # check if number is less than 0 , only compare then.
-        for j in input_data: # itterate over the list to check for equelence.
-            if j==abs(i):    # convert the number into positive numbers for comparison
-                results.extend([j,-abs(j)]) # store the results to list for final usage.
-                
-print(results)                # print the reqd. results
-
-# Q 3.
- 
-input_data=[20,59,44,52,95,-21,20,78] # data points to be work with
-
-from collections import Counter
-
-def most_frquent_number(lst):
-    results = Counter(lst)            # passing the list through counter
-    return results.most_common(1)[0][0] # return the most occurence with number and count as(number,occurence), pickup only first so [0][0] is used
-
-print(most_frquent_number(input_data)) # checkout the reqd. results
-
- 
